@@ -2,6 +2,7 @@
 
 Language Features:
  * Ability to select the abi coder using ``pragma abicoder v1`` and ``pragma abicoder v2``.
+ * Inline Assembly: Use ``.offset`` and ``.length`` for ``bytes`` and ``string`` calldata variables to access their calldata offset and length. Both of them can also be assigned to.
 
 Compiler Features:
  * SMTChecker: Add division by zero checks in the CHC engine.
@@ -20,6 +21,9 @@ Bugfixes:
  * SMTChecker: Fix internal error in the BMC engine when inherited contract from a different source unit has private state variables.
  * SMTChecker: Fix internal error when ``array.push()`` is used as the LHS of an assignment.
  * Code generator: Fix missing creation dependency tracking for abstract contracts.
+
+AST Changes:
+ * New member ``suffix`` for inline assembly identifiers. Currently supported values are ``"slot"``, ``"offset"`` and ``"length"`` to access the components of a Solidity variable.
 
 
 ### 0.7.4 (2020-10-19)

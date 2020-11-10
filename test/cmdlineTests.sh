@@ -260,7 +260,7 @@ printTask "Running general commandline tests..."
         tdir=$(basename "${tdir}")
 
         inputFiles="$(find "${tdir}" -name 'input.*' -type f -exec printf "%s\n" "{}" \;)"
-        inputCount="$(echo "${inputFiles}" | wc -l)"
+        inputCount="$(find "${tdir}" -name 'input.*' -type f -exec printf "x" \; | wc -c)"
         if (( ${inputCount} > 1 ))
         then
             printError "Ambiguous input. Found input files in multiple formats:"

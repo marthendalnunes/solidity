@@ -33,7 +33,7 @@ the compiler notifying you about it.
   these situations from a revert on invalid input, like a failing ``require``.
 
 * If a byte array in storage is accessed whose length is encoded incorrectly, a panic is caused.
-  A contract can only get into this situation if inline assembly is used to modify storage byte arrays.
+  A contract cannot get into this situation unless inline assembly is used to modify the raw representation of storage byte arrays.
 
 New Restrictions
 ================
